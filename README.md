@@ -1,3 +1,3 @@
 # ChessGuide
 
-Guide to popular openings &amp; your real-time companion for best moves!
+A Guide to popular chess openings | A real-time recommendation tool for best moves!
