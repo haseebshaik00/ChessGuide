@@ -23,7 +23,7 @@
         <div class="w-full md:w-[26rem] flex flex-col gap-4 h-full">
             <div class="bg-white dark:bg-slate-900 rounded-2xl shadow p-4 flex-1 flex flex-col">
                 <h2 class="text-sm font-semibold text-slate-700 dark:text-slate-200">
-                    Best move recommendation
+                    Best Move Recommendation
                 </h2>
                 <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
                     Click <strong>Best move</strong> to ask Stockfish for a suggestion
@@ -46,9 +46,9 @@
                             Best move
                         </p>
                         <p class="mt-1 font-mono">
-                            <span v-if="bestMoveStatus === 'idle'">No suggestion yet.</span>
+                            <span v-if="bestMoveStatus === 'idle'">No suggestion yet!</span>
                             <span v-else-if="bestMoveStatus === 'loading'">Analyzing position…</span>
-                            <span v-else-if="bestMoveStatus === 'error'">Engine error.</span>
+                            <span v-else-if="bestMoveStatus === 'error'">Engine error!</span>
                             <span v-else>
                                 {{ bestMoveDisplay }}
                             </span>
@@ -149,7 +149,7 @@ export default defineComponent({
         });
 
         const turnLabel = computed(function () {
-            return game.value.turn() === 'w' ? 'White to move' : 'Black to move';
+            return game.value.turn() === 'w' ? 'White to Move!' : 'Black to Move!';
         });
 
         function describeBestMove(uci: string): string {
@@ -173,9 +173,9 @@ export default defineComponent({
             if (piece) {
                 const color = piece.color === 'w' ? 'White' : 'Black';
                 const pieceName = pieceNames[piece.type] || 'piece';
-                return `Move ${color} ${pieceName} from ${from} to ${to}`;
+                return `Move ${color} ${pieceName} from ${from} to ${to}!`;
             }
-            return `Move from ${from} to ${to}`;
+            return `Move from ${from} to ${to}!`;
         }
 
         const bestMoveDisplay = computed(function () {

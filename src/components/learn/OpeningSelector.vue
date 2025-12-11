@@ -1,7 +1,7 @@
 <template>
     <div class="bg-white dark:bg-slate-900 rounded-2xl shadow p-4">
         <h2 class="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">
-            Choose an opening
+            Choose An Opening
         </h2>
         <select class="w-full rounded-lg border border-slate-300 dark:border-slate-700 px-2 py-1 text-sm
                bg-slate-50 dark:bg-slate-800 dark:text-slate-100" v-model="selectedId" @change="handleChange">
