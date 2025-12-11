@@ -103,7 +103,6 @@ export default defineComponent({
             }
         }
 
-        // Compute FEN + last move from current state
         function buildPosition() {
             const chess = new Chess();
             const opening = openingStore.selectedOpening;

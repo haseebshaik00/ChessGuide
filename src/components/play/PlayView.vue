@@ -253,7 +253,6 @@ export default defineComponent({
             }
         }
 
-
         // STOCKFISH Worker
         function ensureWorker(): void {
             if (stockfishWorker.value) return;

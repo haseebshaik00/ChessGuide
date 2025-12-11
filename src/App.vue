@@ -37,7 +37,7 @@
         <a href="https://github.com/haseebshaik00/ChessGuide/blob/main/public/assets/UML-LLD.png" target="_blank"
           rel="noopener"
           class="px-3 py-1 rounded-full text-xs font-medium bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm">
-          CHESS System Design (UML)
+          System Design (UML)
         </a>
       </div>
     </header>
