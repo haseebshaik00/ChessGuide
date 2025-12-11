@@ -1,6 +1,4 @@
-// src/stores/uiStore.ts
 import { defineStore } from 'pinia'
-
 export type AppMode = 'learn' | 'play'
 export type ThemeMode = 'light' | 'dark'
 

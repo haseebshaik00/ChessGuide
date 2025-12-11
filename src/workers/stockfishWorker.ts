@@ -5,11 +5,8 @@ let engine: any = null
 
 function initEngine(): void {
   if (engine) return
-
-  // Load JS Stockfish from public folder
   importScripts('/stockfish/stockfish.js')
   engine = (self as any).Stockfish()
-
   engine.postMessage('uci')
 }
 
