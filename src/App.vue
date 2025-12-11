@@ -6,7 +6,7 @@
       <div class="flex items-center gap-2">
         <span class="font-bold text-lg">ChessGuide</span>
         <span class="text-xs text-slate-500 dark:text-slate-400">
-          Opening Visualizer || Real-time Best Move Recommendation Tool
+          Opening Visualizer & Real-time Best Move Recommendation Tool
         </span>
       </div>
 
