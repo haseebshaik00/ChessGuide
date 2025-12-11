@@ -6,7 +6,7 @@
       <div class="flex items-center gap-2">
         <span class="font-bold text-lg">ChessGuide</span>
         <span class="text-xs text-slate-500 dark:text-slate-400">
-          Opening Visualizer &amp; Real-time Best Move Recommendation Tool!
+          Opening Visualizer || Real-time Best Move Recommendation Tool
         </span>
       </div>
 
@@ -33,6 +33,12 @@
           <span v-if="ui.theme === 'light'">🌙 Dark</span>
           <span v-else>☀️ Light</span>
         </button>
+
+        <a href="https://github.com/haseebshaik00/ChessGuide/blob/main/public/assets/UML-LLD.png" target="_blank"
+          rel="noopener"
+          class="px-3 py-1 rounded-full text-xs font-medium bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm">
+          CHESS System Design (UML)
+        </a>
       </div>
     </header>
 
@@ -41,6 +47,14 @@
       <LearnView v-if="ui.mode === 'learn'" />
       <PlayView v-else />
     </main>
+
+    <footer class="px-4 py-1 text-xs text-center text-slate-500 dark:text-slate-200">
+      Made with <span class="text-purple-500">♥</span> by
+      <a href="https://github.com/haseebshaik00/ChessGuide" target="_blank" rel="noopener"
+        class="underline font-medium">
+        Haseeb
+      </a>
+    </footer>
   </div>
 </template>
 
