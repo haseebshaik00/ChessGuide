@@ -105,7 +105,7 @@ export default defineComponent({
     },
     setup() {
         const game = ref(new Chess());
-        const selectedSquare = ref<string | null>(null);
+        const selectedSquare = ref<string | undefined>(undefined);
         const lastMove = ref<LastMove>(null);
 
         const bestMoveStatus = ref<BestMoveStatus>('idle');
@@ -197,7 +197,7 @@ export default defineComponent({
 
             // Click same square → deselect
             if (selectedSquare.value === coord) {
-                selectedSquare.value = null;
+                selectedSquare.value = undefined;
                 return;
             }
 
@@ -219,7 +219,7 @@ export default defineComponent({
 
             if (move) {
                 lastMove.value = { from: move.from, to: move.to };
-                selectedSquare.value = null;
+                selectedSquare.value = undefined;
                 persistFen();
                 bestMoveStatus.value = 'idle';
                 bestMoveUci.value = null;
@@ -239,7 +239,7 @@ export default defineComponent({
 
         function handleResetGame(): void {
             game.value = new Chess();
-            selectedSquare.value = null;
+            selectedSquare.value = undefined;
             lastMove.value = null;
             bestMoveStatus.value = 'idle';
             bestMoveUci.value = null;

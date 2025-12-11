@@ -110,7 +110,9 @@ export default defineComponent({
 
             if (opening) {
                 for (let i = 0; i < openingStore.currentMoveIndex; i += 1) {
-                    last = chess.move(opening.moves[i], { sloppy: true });
+                    const moveSan = opening.moves[i];
+                    if (!moveSan) continue;
+                    last = chess.move(moveSan);
                 }
             }
 

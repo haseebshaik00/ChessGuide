@@ -31,7 +31,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, PropType } from 'vue';
+import { defineComponent, computed } from 'vue';
+import type { PropType } from 'vue';
 
 type LastMove = { from: string; to: string } | null;
 
@@ -70,13 +71,14 @@ function pieceToUnicode(symbol: string): string {
 }
 
 function parseFenBoard(fen: string): string[][] {
-    const boardPart = fen.split(' ')[0];
+    const boardPart = fen.split(' ')[0] ?? '';
     const rows = boardPart.split('/');
     const board: string[][] = [];
 
     for (let i = 0; i < rows.length; i += 1) {
         const rowStr = rows[i];
         const row: string[] = [];
+        if (!rowStr) continue;
         for (let j = 0; j < rowStr.length; j += 1) {
             const ch = rowStr.charAt(j);
             const num = Number(ch);
@@ -103,8 +105,8 @@ export default defineComponent({
             default: null,
         },
         selectedSquare: {
-            type: String,
-            default: null,
+            type: String as PropType<string | undefined>,
+            default: undefined,
         },
         interactive: {
             type: Boolean,
@@ -118,14 +120,14 @@ export default defineComponent({
             const result: SquareView[] = [];
 
             for (let rankIndex = 0; rankIndex < 8; rankIndex += 1) {
-                const row = board[rankIndex];
+                const row = board[rankIndex] ?? '';
                 const rankNumber = 8 - rankIndex;
 
                 for (let fileIndex = 0; fileIndex < 8; fileIndex += 1) {
-                    const fileLetter = FILES[fileIndex];
+                    const fileLetter = FILES[fileIndex]?? '';
                     const coord = fileLetter + String(rankNumber);
 
-                    const symbol = row[fileIndex] || '';
+                    const symbol = row[fileIndex] ?? '';
                     const isDark = (rankIndex + fileIndex) % 2 === 1;
                     const isWhitePiece = symbol !== '' && symbol === symbol.toUpperCase();
                     const unicode = symbol ? pieceToUnicode(symbol) : null;

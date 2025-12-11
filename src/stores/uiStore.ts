@@ -10,8 +10,8 @@ interface UiState {
 export const useUiStore = defineStore('ui', {
   state(): UiState {
     return {
-      mode: 'learn',
-      theme: 'light',
+      mode: 'play',
+      theme: 'dark',
     }
   },
   actions: {
@@ -52,7 +52,7 @@ export const useUiStore = defineStore('ui', {
       if (storedTheme === 'light' || storedTheme === 'dark') {
         this.setTheme(storedTheme)
       } else {
-        this.setTheme('light')
+        this.setTheme('dark')
       }
     },
   },
